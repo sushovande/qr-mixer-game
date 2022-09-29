@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+ Copyright 2022 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../static/cashier.css" rel="stylesheet">
+<script src="../static/jsQR.js"></script>
+<title>QR Game</title>
+
+<div class="outercontainer">
+  <header class="navbar navbar-dark">
+    <div class="site-title">
+      <p>QR Game</p>
+    </div>
+    <div class="nameblock">
+      <div class="nametext">{{.Name}}</div>
+    </div>
+  </header>
+
+  <div class="formbody">
+    <h4>Congrats on starting a new game.</h4>
+    <p>Please answer the following questions truthfully, for the success of the expedition depends on it.</p>
+
+    <form id="dqform">
+      <input type="hidden" name="qr" value="{{.Qr}}">
+      <div class="dqsection">
+        {{range $dq := .Qrgo.SurveyQuestions}}
+        <div class="dquestion">
+          <div class="dquestion-text">{{$dq.QuestionText}}</div>
+          <input type="radio" id="dqtrue{{$dq.QuestionId}}" name="dqans{{$dq.QuestionId}}" value="true">
+          <label for="dqtrue{{$dq.QuestionId}}">Yes</label>
+          <input type="radio" id="dqfalse{{$dq.QuestionId}}" name="dqans{{$dq.QuestionId}}" value="false">
+          <label for="dqfalse{{$dq.QuestionId}}">No</label>
+        </div>
+        {{end}}
+      </div>
+
+      <button id="cluescansim" type="submit">Save</button>
+      <div id="errormsg"></div>
+    </form>
+
+
+  </div>
+</div>
+
+<script>
+  function dqsubmit(e) {
+    e.preventDefault();
+    const formElement = document.getElementById('dqform');
+    const data = new URLSearchParams(new FormData(formElement));
+    fetch('/submitsurvey', { method: 'post', body: data })
+      .then(response => {
+        if (!response.ok) {
+          document.getElementById('errormsg').textContent =
+            'Could not submit your data. ' + response;
+        } else {
+          window.location.assign('/game');
+        }
+      });
+  }
+  document.getElementById('dqform').addEventListener('submit', dqsubmit);
+</script>

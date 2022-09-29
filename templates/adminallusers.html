@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+ Copyright 2022 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../static/cashier.css" rel="stylesheet">
+<title>QR Game</title>
+
+<div class="outercontainer">
+  <header class="navbar navbar-dark">
+    <div class="site-title">
+      <p>QR Game</p>
+    </div>
+    <div class="nameblock">
+      <div class="nametext">Admin</div>
+    </div>
+  </header>
+
+  <div class="admin-navigation">
+    <a href="/9283e316-beaa-4182-b3a6-0937046251ee/manageUsers">Manage Users</a>
+    <a href="/9283e316-beaa-4182-b3a6-0937046251ee/allUsers">All Users</a>
+    <a href="/9283e316-beaa-4182-b3a6-0937046251ee/allLogs">All Logs</a>
+    <a href="/9283e316-beaa-4182-b3a6-0937046251ee/questions">Questions</a>
+  </div>
+
+  <p>Note: this table shows only those users who have completed the survey.</p>
+  <table id="txtable">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Name</th>
+
+        {{range $val := .SurveyQ -}}
+        <th>{{$val}}</th>
+        {{end -}}
+
+        <th>Level</th>
+        <th>Health</th>
+        <th>Has Al</th>
+        <th>Has Cu</th>
+        <th>Has Sn</th>
+        <th>Has Zn</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{range .Users}}
+      <tr>
+        <td><a href="/9283e316-beaa-4182-b3a6-0937046251ee/userLogs/{{.Username}}">{{.Username}}</a></td>
+        <td>{{.Name}}</td>
+        {{- range $val := .SurveyAnswers -}}
+        <td>{{if $val}}✅{{else}}❌{{end}}</td>
+        {{end -}}
+        <td>{{.Level}}</td>
+        <td>{{.Health}}</td>
+        <td>{{if .HasAl}}🔼{{else}}{{end}}</td>
+        <td>{{if .HasCu}}🟧{{else}}{{end}}</td>
+        <td>{{if .HasSn}}🔷{{else}}{{end}}</td>
+        <td>{{if .HasZn}}🔻{{else}}{{end}}</td>
+      </tr>
+      {{end}}
+    </tbody>
+  </table>
+</div>

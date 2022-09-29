@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+ Copyright 2022 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../static/cashier.css" rel="stylesheet">
+<title>QR Game</title>
+
+<div class="outercontainer">
+  <header class="navbar navbar-dark">
+    <div class="site-title">
+      <p>QR Game</p>
+    </div>
+    <div class="nameblock">
+      <div class="nametext">Admin</div>
+    </div>
+  </header>
+
+  <div class="admin-navigation">
+    <a href="/9283e316-beaa-4182-b3a6-0937046251ee/manageUsers">Manage Users</a>
+    <a href="/9283e316-beaa-4182-b3a6-0937046251ee/allUsers">All Users</a>
+    <a href="/9283e316-beaa-4182-b3a6-0937046251ee/allLogs">All Logs</a>
+    <a href="/9283e316-beaa-4182-b3a6-0937046251ee/questions">Questions</a>
+  </div>
+
+  <form id="qnform" method="POST">
+    <h2>Survey Questions</h2>
+    <textarea id="survey" name="survey" spellcheck="false">{{.SurveyQuestions}}</textarea>
+
+    <h2>Game Questions</h2>
+    <textarea id="gameq" name="gameq" spellcheck="false">{{.GameQuestions}}</textarea>
+    <div><button id="save" type="submit">Save</button></div>
+  </form>
+
+  <div id="errormsg"></div>
+</div>
+
+<script>
+
+  function dqsubmit(e) {
+    e.preventDefault();
+    const formElement = document.getElementById('qnform');
+    const data = new URLSearchParams(new FormData(formElement));
+    fetch('/9283e316-beaa-4182-b3a6-0937046251ee/saveQuestions', { method: 'post', body: data })
+      .then(response => {
+        if (!response.ok) {
+          document.getElementById('errormsg').textContent =
+            'Could not submit your data. ' + response;
+        } else {
+          document.getElementById('errormsg').textContent =
+            'Data saved.';
+          window.setTimeout(() => { document.getElementById('errormsg').textContent = "" }, 3000);
+        }
+      });
+  }
+  document.getElementById('qnform').addEventListener('submit', dqsubmit);
+</script>

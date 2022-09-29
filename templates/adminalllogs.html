@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+ Copyright 2022 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../../static/cashier.css" rel="stylesheet">
+<title>QR Game</title>
+
+<div class="outercontainer">
+  <header class="navbar navbar-dark">
+    <div class="site-title">
+      <p>QR Game</p>
+    </div>
+    <div class="nameblock">
+      <div class="nametext">Admin</div>
+    </div>
+  </header>
+
+  <div class="admin-navigation">
+    <a href="/9283e316-beaa-4182-b3a6-0937046251ee/manageUsers">Manage Users</a>
+    <a href="/9283e316-beaa-4182-b3a6-0937046251ee/allUsers">All Users</a>
+    <a href="/9283e316-beaa-4182-b3a6-0937046251ee/allLogs">All Logs</a>
+    <a href="/9283e316-beaa-4182-b3a6-0937046251ee/questions">Questions</a>
+  </div>
+
+  {{if .UserState}}
+  <h2>User Details</h2>
+  <form id="userupdateform">
+    <div>
+      <div class="userupdateformelement">
+        <div><label for="userinfo">User Info:</label></div>
+        <div><textarea id="userinfo" name="userinfo" class="userupdatetextarea"
+            spellcheck="false">{{.UserInfo}}</textarea></div>
+      </div>
+      <div class="userupdateformelement">
+        <div><label for="userstate">User State:</label></div>
+        <div><textarea id="userstate" name="userstate" class="userupdatetextarea"
+            spellcheck="false">{{.UserState}}</textarea>
+        </div>
+      </div>
+    </div>
+    <div><button type="submit">Update</button></div>
+  </form>
+  <div id="errormsg"></div>
+  {{end}}
+
+  <h2>Logs:</h2>
+  <table id="txtable">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Updated</th>
+        <th>GameLog</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{range .Logs}}
+      <tr>
+        <td><a href="/9283e316-beaa-4182-b3a6-0937046251ee/userLogs/{{.Username}}">{{.Username}}</a></td>
+        <td>
+          <pre>{{.Updated}}</pre>
+        </td>
+        <td>
+          <pre>{{.GameLog}}</pre>
+        </td>
+      </tr>
+      {{end}}
+    </tbody>
+  </table>
+</div>
+
+<script>
+
+  function dqsubmit(e) {
+    e.preventDefault();
+    const formElement = document.getElementById('userupdateform');
+    const data = new URLSearchParams(new FormData(formElement));
+    fetch('/9283e316-beaa-4182-b3a6-0937046251ee/updateUser', { method: 'post', body: data })
+      .then(response => {
+        if (!response.ok) {
+          document.getElementById('errormsg').textContent =
+            'Could not submit your data. ' + response;
+        } else {
+          document.getElementById('errormsg').textContent =
+            'Data saved.';
+          window.setTimeout(() => { document.getElementById('errormsg').textContent = "" }, 3000);
+        }
+      });
+  }
+  document.getElementById('userupdateform').addEventListener('submit', dqsubmit);
+</script>

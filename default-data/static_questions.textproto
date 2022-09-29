@@ -1,0 +1,155 @@
+# proto-file: ../gamedata.proto
+# proto-message: GameQSet
+
+game_questions: {
+  question_id: 1
+  type: USERNAME_LIST
+  question_html: "This is question 1. The answer is spare1 or the next one."
+  ans_usernames: "zspare01"
+  ans_usernames: "zspare02"
+}
+game_questions: {
+  question_id: 2
+  type: USERNAME_LIST
+  question_html: "This is question 2. The answer is spare2 or the next one."
+  ans_usernames: "zspare02"
+  ans_usernames: "zspare03"
+}
+game_questions: {
+  question_id: 3
+  type: SURVEY_ANS
+  question_html: "This is the question 3. The answer is true on survey question 1 (chocolate)."
+  survey_id: 1
+  survey_true_is_correct: true
+}
+game_questions: {
+  question_id: 4
+  type: USERNAME_LIST
+  question_html: "This is question 4. The answer is spare4 or the next one."
+  ans_usernames: "zspare04"
+  ans_usernames: "zspare05"
+}
+game_questions: {
+  question_id: 5
+  type: SURVEY_ANS
+  question_html: "This is the question 5. The answer is false on survey question 2 (color blue)."
+  survey_id: 2
+  survey_true_is_correct: false
+}
+game_questions: {
+  question_id: 6
+  type: USERNAME_LIST
+  question_html: "This is question 6. The answer is spare6 or the next one."
+  ans_usernames: "zspare06"
+  ans_usernames: "zspare07"
+}
+game_questions: {
+  question_id: 7
+  type: USERNAME_LIST
+  question_html: "This is question 7. The answer is spare7 or the next one."
+  ans_usernames: "zspare07"
+  ans_usernames: "zspare08"
+}
+game_questions: {
+  question_id: 8
+  type: USERNAME_LIST
+  question_html: "This is question 8. The answer is spare8 or the next one."
+  ans_usernames: "zspare08"
+  ans_usernames: "zspare09"
+}
+game_questions: {
+  question_id: 9
+  type: USERNAME_LIST
+  question_html: "This is question 9. The answer is spare9 or the next one."
+  ans_usernames: "zspare09"
+  ans_usernames: "zspare10"
+}
+game_questions: {
+  question_id: 10
+  type: USERNAME_LIST
+  question_html: "This is question 10. The answer is spare10 or the next one."
+  ans_usernames: "zspare10"
+  ans_usernames: "zspare11"
+}
+game_questions: {
+  question_id: 11
+  type: USERNAME_LIST
+  question_html: "This is question 11. The answer is spare11 or the next one."
+  ans_usernames: "zspare11"
+  ans_usernames: "zspare12"
+}
+game_questions: {
+  question_id: 12
+  type: USERNAME_LIST
+  question_html: "This is question 12. The answer is spare12 or the next one."
+  ans_usernames: "zspare12"
+  ans_usernames: "zspare13"
+}
+game_questions: {
+  question_id: 13
+  type: USERNAME_LIST
+  question_html: "This is question 13. The answer is spare13 or the next one."
+  ans_usernames: "zspare13"
+  ans_usernames: "zspare14"
+}
+game_questions: {
+  question_id: 14
+  type: USERNAME_LIST
+  question_html: "This is question 14. The answer is spare14 or the next one."
+  ans_usernames: "zspare14"
+  ans_usernames: "zspare15"
+}
+game_questions: {
+  question_id: 15
+  type: USERNAME_LIST
+  question_html: "This is question 15. The answer is spare15 or the next one."
+  ans_usernames: "zspare15"
+  ans_usernames: "zspare16"
+}
+game_questions: {
+  question_id: 16
+  type: USERNAME_LIST
+  question_html: "This is question 16. The answer is spare16 or the next one."
+  ans_usernames: "zspare16"
+  ans_usernames: "zspare17"
+}
+game_questions: {
+  question_id: 17
+  type: USERNAME_LIST
+  question_html: "This is question 17. The answer is spare17 or the next one."
+  ans_usernames: "zspare17"
+  ans_usernames: "zspare18"
+}
+game_questions: {
+  question_id: 18
+  type: USERNAME_LIST
+  question_html: "This is question 18. The answer is spare18 or the next one."
+  ans_usernames: "zspare18"
+  ans_usernames: "zspare19"
+}
+game_questions: {
+  question_id: 19
+  type: ANY_PERSON
+  question_html: "This is question 19. The answer is any-scan you like."
+}
+game_questions: {
+  question_id: 20
+  type: USERNAME_LIST
+  question_html: "This is question 20. grab some metals."
+  ans_usernames: "zspare20"
+  ans_usernames: "zspare21"
+}
+game_questions: {
+  question_id: 21
+  type: USERNAME_LIST
+  question_html: "This is question 21. Just mix everything"
+  ans_usernames: "zspare20"
+  ans_usernames: "zspare21"
+}
+game_questions: {
+  question_id: 22
+  type: USERNAME_LIST
+  question_html: "This is question 22. You win."
+  ans_usernames: "zspare20"
+  ans_usernames: "zspare21"
+}

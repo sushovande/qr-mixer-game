@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+ Copyright 2022 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../static/cashier.css" rel="stylesheet">
+<script src="../static/jsQR.js"></script>
+<title>QR Game</title>
+
+<div class="outercontainer">
+  <header class="navbar navbar-dark">
+    <div class="site-title">
+      <p>QR Game</p>
+    </div>
+    <div class="nameblock">
+      <div class="nametext">{{.U.UserInfo.GetName}}</div>
+    </div>
+  </header>
+
+  <div class="hearts">
+    <img id="metalal" class="metal {{if .U.State.GetHasAl}}visible{{else}}hidden{{end}}" width="32"
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='evnJH7yhcIw1' viewBox='0 0 200 250'%3E%3Crect width='202.093534' height='246.665541' rx='0' ry='0' transform='matrix(.923397 0 0 0.957736 6.693718 6.879766)' fill='%23dfdde1' stroke='%23a372bc' stroke-width='15'/%3E%3Ctext dx='0' dy='0' font-family='&quot;Roboto&quot;' font-size='100' font-weight='400' transform='translate(55.245964 171.019755)' stroke-width='0'%3E%3Ctspan y='0' font-weight='400' stroke-width='0'%3E%3C!%5BCDATA%5BAl%5D%5D%3E%3C/tspan%3E%3C/text%3E%3Ctext dx='0' dy='0' font-family='&quot;Roboto&quot;' font-size='56' font-weight='400' transform='translate(15.524229 65.338512)' stroke-width='0'%3E%3Ctspan y='0' font-weight='400' stroke-width='0'%3E%3C!%5BCDATA%5B13%5D%5D%3E%3C/tspan%3E%3Ctspan x='0' y='112' font-weight='400' stroke-width='0'%3E%3C!%5BCDATA%5B %5D%5D%3E%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+    <img id="metalcu" class="metal {{if .U.State.GetHasCu}}visible{{else}}hidden{{end}}" width="32"
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='eeaFsNOU7Su1' viewBox='0 0 200 250'%3E%3Crect width='202.093534' height='246.665541' rx='0' ry='0' transform='matrix(.923397 0 0 0.957736 6.693718 6.879766)' fill='%23c1996e' stroke='%23833720' stroke-width='15'/%3E%3Ctext dx='0' dy='0' font-family='&quot;Roboto&quot;' font-size='100' font-weight='400' transform='translate(39.892681 171.526256)' stroke-width='0'%3E%3Ctspan y='0' font-weight='400' stroke-width='0'%3E%3C!%5BCDATA%5BCu%5D%5D%3E%3C/tspan%3E%3C/text%3E%3Ctext dx='0' dy='0' font-family='&quot;Roboto&quot;' font-size='56' font-weight='400' transform='translate(15.524229 65.338512)' stroke-width='0'%3E%3Ctspan y='0' font-weight='400' stroke-width='0'%3E%3C!%5BCDATA%5B29%5D%5D%3E%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+    <img id="metalsn" class="metal {{if .U.State.GetHasSn}}visible{{else}}hidden{{end}}" width="32"
+      src="data:image/svg+xml,%3Csvg id='eZ1IYuMJyBb1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 250'%3E%3Crect width='202.093534' height='246.665541' rx='0' ry='0' transform='matrix(.923397 0 0 0.957736 6.693718 6.879766)' fill='%23bcb8b6' stroke='%231c1b1b' stroke-width='15'/%3E%3Ctext dx='0' dy='0' font-family='&quot;Roboto&quot;' font-size='100' font-weight='400' transform='translate(42.749657 171.526256)' stroke-width='0'%3E%3Ctspan y='0' font-weight='400' stroke-width='0'%3E%3C!%5BCDATA%5BSn%5D%5D%3E%3C/tspan%3E%3C/text%3E%3Ctext dx='0' dy='0' font-family='&quot;Roboto&quot;' font-size='56' font-weight='400' transform='translate(15.524229 65.338512)' stroke-width='0'%3E%3Ctspan y='0' font-weight='400' stroke-width='0'%3E%3C!%5BCDATA%5B50%5D%5D%3E%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+    <img id="metalzn" class="metal {{if .U.State.GetHasZn}}visible{{else}}hidden{{end}}" width="32"
+      src="data:image/svg+xml,%3Csvg id='e4feVK9uMLX1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 250'%3E%3Crect width='202.093534' height='246.665541' rx='0' ry='0' transform='matrix(.923397 0 0 0.957736 6.693718 6.879766)' fill='%23b3c3af' stroke='%232c613d' stroke-width='15'/%3E%3Ctext dx='0' dy='0' font-family='&quot;Roboto&quot;' font-size='100' font-weight='400' transform='translate(42.48058 171.526256)' stroke-width='0'%3E%3Ctspan y='0' font-weight='400' stroke-width='0'%3E%3C!%5BCDATA%5BZn%5D%5D%3E%3C/tspan%3E%3C/text%3E%3Ctext dx='0' dy='0' font-family='&quot;Roboto&quot;' font-size='56' font-weight='400' transform='translate(15.524229 65.338512)' stroke-width='0'%3E%3Ctspan y='0' font-weight='400' stroke-width='0'%3E%3C!%5BCDATA%5B30%5D%5D%3E%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+    <div id="heart1" class="heart {{if ge .U.State.GetLife 1}}heart-active{{else}}heart-dead{{end}}"></div>
+    <div id="heart2" class="heart {{if ge .U.State.GetLife 2}}heart-active{{else}}heart-dead{{end}}"></div>
+    <div id="heart3" class="heart {{if ge .U.State.GetLife 3}}heart-active{{else}}heart-dead{{end}}"></div>
+    <div id="heart4" class="heart {{if ge .U.State.GetLife 4}}heart-active{{else}}heart-dead{{end}}"></div>
+    <div id="heart5" class="heart {{if ge .U.State.GetLife 5}}heart-active{{else}}heart-dead{{end}}"></div>
+  </div>
+  <div class="formbody">
+    <div class="tab-switcher">
+      <input type="radio" name="tabgroup" id="tab-1" checked onchange="tabchange();">
+      <label for="tab-1">Clue</label>
+      <input type="radio" name="tabgroup" id="tab-2" onchange="tabchange();">
+      <label for="tab-2">Scan</label>
+      <div class="tab">
+        <div class="tabcontent visible" id="cluecontent">
+          {{.Clue}}
+        </div>
+      </div>
+      <div class="tab">
+        <div class="tabcontent hidden" id="scancontent">
+          <div id="scancontroller">
+            <div id="loadingMessage">🎥 Unable to access video stream (please make sure you allowed camera permissions)
+            </div>
+            <div id="canvasholder">
+              <canvas id="canvas" hidden></canvas>
+            </div>
+            <div id="output" hidden>
+              <div id="outputMessage">No QR code detected.</div>
+              <div hidden><b>Data:</b> <span id="outputData"></span></div>
+            </div>
+            <button id="resumeScanning" hidden onclick="resumeScanning()">Resume Scanning</button>
+          </div>
+          <div id="scansuccess" class="msgvisible"></div>
+          <div id="actionlog" class="msghidden"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="errormsg"></div>
+
+  </div>
+</div>
+
+<script>
+  var PostEndpoint = "/makemove";
+</script>
+<script src="../static/game.js"></script>

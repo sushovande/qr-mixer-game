@@ -1,0 +1,146 @@
+// Copyright 2022 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+// To compile this, execute
+// protoc --go_out=. gamedata.proto
+syntax = "proto3";
+package qrpb;
+option go_package = "./qrpb";
+
+// GUser represents a player who has signed up for the game and
+// submitted answers to the survey.
+message GUser {
+  optional string username = 3;
+  optional string name = 2;
+  repeated SurveyAnswer survey_answers = 4;
+  reserved 1;
+}
+
+// QRMapping is an entry that associates a player with various properties,
+// like their name, username, and card suit. This is set by the game organizer.
+message QRMapping {
+  // username must be unique, as it is used to indicate which people
+  // are answers to a GameQuestion.
+  optional string username = 1;
+
+  // display_name is used as a confirmation during signup and for
+  // showing in the admin leaderboard.
+  optional string display_name = 2;
+
+  // qrcode is the full decoded string from the qrcode, including the
+  // leading URL.
+  optional string qrcode = 3;
+
+  // Which card suit should be shown in the badge for this player.
+  optional CardSuit card_suit = 4;
+
+  // The face value of this card. Number 1 represents Ace, and numbers
+  // 11 to 13 represent the face cards (J, Q, K).
+  optional int64 card_rank = 5;
+}
+
+// A set of name associations.
+message QRMappingSet { repeated QRMapping qr_mappings = 1; }
+
+// CardSuit is the suit of cards shown on the badge that can sometimes
+// be used as question clues.
+enum CardSuit {
+  CARD_SUIT_UNSPECIFIED = 0;
+  SPADES = 1;
+  HEARTS = 2;
+  CLUBS = 3;
+  DIAMONDS = 4;
+}
+
+// GameState is information about the current situation of the user
+message GameState {
+  optional int64 user_level = 1;
+  optional int64 life = 2;
+  optional bool has_al = 3;
+  optional bool has_cu = 4;
+  optional bool has_sn = 5;
+  optional bool has_zn = 6;
+}
+
+// ActionLog represents a single activity performed by a user
+message ActionLog {
+  optional int64 timestamp_usec = 1;
+  optional string clue_short_name = 2;
+  optional ActionType type = 3;
+  optional GameState old_state = 4;
+  optional ActionResult result = 5;
+
+  enum ActionType {
+    ACTION_UNSPECIFIED = 0;
+    ACTION_CODE_SCAN = 1;
+  }
+
+  enum ActionResult {
+    RESULT_UNSPECIFIED = 0;
+    RESULT_PROGRESS = 1;
+    RESULT_LOST_LIFE = 2;
+    RESULT_ALREADY_VICTORIOUS = 3;
+    RESULT_ALREADY_DEAD = 4;
+    RESULT_GRABBED_METAL = 5;
+    RESULT_NO_GRABBED_METAL = 6;
+  }
+}
+
+enum GQType {
+  GQTYPE_UNSPECIFIED = 0;
+  USERNAME_LIST = 1;
+  SURVEY_ANS = 2;
+  ANY_PERSON = 3;
+}
+
+// A game question, which is a numbered question with the HTML to show to the
+// players. The answer could be a set of USERNAMEs or anyone who answered the
+// survey question with the same boolean.
+message GameQuestion {
+  optional int64 question_id = 1;
+  optional GQType type = 2;
+  optional string question_html = 3;
+
+  // Valid answers. Only valid for type = USERNAME_LIST.
+  repeated string ans_usernames = 4;
+
+  // Which Survey question is being referenced here? Only valid for type =
+  // SURVEY_ANS.
+  optional int64 survey_id = 5;
+  // Whether the correct answers are those who chose the 'true' option in the
+  // survey.
+  optional bool survey_true_is_correct = 6;
+}
+
+message GameQSet { repeated GameQuestion game_questions = 1; }
+
+enum SurveyType {
+  SURVEY_TYPE_UNSPECIFIED = 0;
+  BOOLEAN = 1;
+}
+
+// A survey question shown at the beginning to the players (during signup).
+message SurveyQuestion {
+  optional int64 question_id = 1;
+  optional string question_text = 2;
+  optional SurveyType type = 3;
+}
+
+// Survey response to a single question.
+message SurveyAnswer {
+  optional int64 question_id = 1;
+  optional bool is_true = 2;
+}
+
+message SurveySet { repeated SurveyQuestion survey_questions = 1; }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+ Copyright 2022 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../static/badge.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Noto+Serif:wght@700&display=swap"
+  rel="stylesheet">
+<title>QR Game: Badges</title>
+
+{{range .GetQrMappings}}
+<div class="badgecontainer">
+  <div class="badge-left">
+    <img class="qr" src="qrimage?qr={{.GetQrcode}}">
+  </div>
+  <div class="badge-right">
+    <p class="name">{{.GetDisplayName}}</p>
+    <p class="username">{{.GetUsername}}@</p>
+    <div class="logo-holder">
+      <img class="card-face" src="card/{{.GetCardSuit}}-{{.GetCardRank}}.svg">
+      <img class="org-logo" src="../static/generic-logo.png">
+    </div>
+  </div>
+</div>
+{{end}}

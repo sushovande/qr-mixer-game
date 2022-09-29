@@ -1,0 +1,13 @@
+# proto-file: ../gamedata.proto
+# proto-message: SurveySet
+
+survey_questions: {
+  question_id: 1
+  question_text: "survey question 1. Do you like chocolate?"
+  type: BOOLEAN
+}
+survey_questions: {
+  question_id: 2
+  question_text: "survey question 2. Do you like the color blue?"
+  type: BOOLEAN
+}

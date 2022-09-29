@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" 
+shape-rendering="geometricPrecision" text-rendering="geometricPrecision" width="300" height="300">
+<rect width="114.975519" height="174.236029" rx="16" ry="16" transform="matrix(1.002382 0.165536-.161507 0.977981 117.400711 45.015741)" 
+fill="#c7d7f4" stroke="#292d51" stroke-width="4"/><rect width="114.975519" height="174.236029" rx="12" ry="12" 
+transform="matrix(.876542 0.144755-.147177 0.89121 123.386638 53.769729)" fill="#c7d7f4" stroke="#fff" 
+stroke-width="4"/>
+<rect width="114.975519" height="174.236029" rx="16" ry="16" transform="matrix(.951083-.35723 0.348534 0.92793 51.604032 93.305349)" 
+fill="#fefeff" stroke="#292d51" stroke-width="4"/><text dx="0" dy="0" font-family="&quot;egHdDC2MUwQ1:::Noto Serif&quot;" font-size="75" 
+font-weight="700" transform="matrix(.939874-.341522 0.341522 0.939874 86.505577 164.334546)" stroke-width="0" fill="{{.Color}}"><tspan y="0" font-weight="700" 
+stroke-width="0">{{.Rank}}</tspan></text><text dx="0" dy="0" font-family="&quot;egHdDC2MUwQ1:::Noto Serif&quot;" font-size="100" font-weight="700" 
+transform="matrix(.920099-.391686 0.391686 0.920099 157.69538 220.089493)" stroke-width="0"><tspan y="0" font-weight="700" stroke-width="0" fill="{{.Color}}">{{.Suit}}</tspan></text>
+<style><![CDATA[
+@font-face {font-family: 'egHdDC2MUwQ1:::Noto Serif';font-style: normal;font-weight: 700;src: url(https://fonts.gstatic.com/l/font?kit=ga6Law1J5X9T9RW6j9bNdOwzTRCMcISrqyc&skey=d061d87fe9231c&v=v21) format('truetype');}
+]]></style>
+</svg>

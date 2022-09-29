@@ -1,0 +1,31 @@
+# proto-file: ../gamedata.proto
+# proto-message: QRMappingSet
+
+qr_mappings {
+  username: "zspare01"
+  display_name: "Spare 01"
+  qrcode: "https://qr.sd3.in/#bcuywdlbjy"
+  card_suit: SPADES
+  card_rank: 1
+}
+qr_mappings {
+  username: "zspare02"
+  display_name: "Spare 02"
+  qrcode: "https://qr.sd3.in/#bqzsfiyykn"
+  card_suit: HEARTS
+  card_rank: 2
+}
+qr_mappings {
+  username: "zspare03"
+  display_name: "Spare 03"
+  qrcode: "https://qr.sd3.in/#fdbiygagwc"
+  card_suit: CLUBS
+  card_rank: 3
+}
+qr_mappings {
+  username: "zspare04"
+  display_name: "Spare 04"
+  qrcode: "https://qr.sd3.in/#encyubcmsr"
+  card_suit: DIAMONDS
+  card_rank: 4
+}

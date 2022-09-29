@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+ Copyright 2022 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../static/cashier.css" rel="stylesheet">
+<title>QR Game</title>
+
+<div class="outercontainer">
+  <header class="navbar navbar-dark">
+    <div class="site-title">
+      <p>QR Game</p>
+    </div>
+    <div class="nameblock">
+      <div class="nametext">Admin</div>
+    </div>
+  </header>
+
+  <div class="admin-navigation">
+    <a href="/9283e316-beaa-4182-b3a6-0937046251ee/manageUsers">Manage Users</a>
+    <a href="/9283e316-beaa-4182-b3a6-0937046251ee/allUsers">All Users</a>
+    <a href="/9283e316-beaa-4182-b3a6-0937046251ee/allLogs">All Logs</a>
+    <a href="/9283e316-beaa-4182-b3a6-0937046251ee/questions">Questions</a>
+  </div>
+
+
+  <div class="formbody">
+    <h2>Users:</h2>
+    <p>How to generate for the first time: Open a spreadsheet
+      program like Microsoft Excel or Google Sheets. As the first
+      column header, write "Name", for the second column, write
+      "Username". Fill out both columns with your attendee list.
+      Once you're happy, select the entire spreadsheet (CTRL+A),
+      copy it, and paste it in the box below.
+    </p>
+    <p>Now, Click the Generate QR Codes button to randomly assign
+      QR codes to all your attendees, and finally click the save
+      button to store everything in the system. You can also copy
+      the text and paste it back in your spreadsheet for future
+      reference.
+    </p>
+    <textarea id="users" name="users" spellcheck="false">{{.UserTSV}}</textarea>
+
+    <button id="generateqr">Generate QR Codes</button>
+    <button id="save">Save</button>
+
+    <div id="validation">Waiting for data...</div>
+    <div id="errormsg"></div>
+  </div>
+
+</div>
+
+<script>
+  const SITE_URL_PREFIX = "https://qr.sd3.in/";
+  const PostEndpoint = "/9283e316-beaa-4182-b3a6-0937046251ee/saveUserQrMapping"
+</script>
+<script src="../static/admin.js"></script>
+<script>
+  document.getElementById('users').addEventListener('input', userChanged);
+  document.getElementById('generateqr').addEventListener('click', generateQrCodeButtonClicked);
+  document.getElementById('save').addEventListener('click', saveButtonClicked);
+</script>
