@@ -4,7 +4,7 @@ QR Mixer Game is software that allows you to host a website to conduct a fun Mix
 
 QR Mixer Game also has special question types that require collaboration among the players. It can also generate printable tags with some special features, and a survey at the beginning of the game that helps the organiser set interesting questions.
 
-Setting up the game is easy, see the organiser playbook for more information.
+Setting up the game is easy, see [the organizer playbook](docs/organizer-handbook.md) for more information.
 
 ## Contributing
 
