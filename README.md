@@ -1,6 +1,6 @@
 # QR Mixer Game
 
-![QR Mixer Game Logo](https://raw.githubusercontent.com/sushovande/qr-mixer-game/main/docs/qr-logo.png | width=100)
+<img src="https://raw.githubusercontent.com/sushovande/qr-mixer-game/main/docs/qr-logo.png" width="120px" alt="QR Mixer Game Logo">
 
 QR Mixer Game is software that allows you to host a website to conduct a fun Mixer game for your friends or colleagues. During this game, the organiser hands out a printed badge with a QR Code to each player, and they have to solve the clues set by the organiser. The answer to the clues may be props around the playing area, like any other treasure hunt game, but crucially, it may also be one or more people among the group of players themselves.
 
