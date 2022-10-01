@@ -21,3 +21,7 @@ Think of the area where you will be playing the game, and whether you will have 
 
 ## What if I want to make it a purely props-based game?
 In that case, put some dummy question in your survey questions box, something like "Are you ready to play the game?". In the questions box, you can put regular questions, all of type USERNAME_LIST, and each referring to some prop's tag.
+
+## Navigation
+ * Previous page: [Setting up your questions](setting-questions.md)
+ * Next page: [A Checklist](checklist.md)

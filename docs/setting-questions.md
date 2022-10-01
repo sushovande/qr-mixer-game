@@ -63,3 +63,7 @@ Note: in the current version of the game, the following questions have special p
  * Question 19: This is the last "regular" question. Answering this correctly guarantees that the player will receive the second of four tokens, in case they didn't get one already
  * Question 20: In this question, we expect the players to mingle among themselves, and share the tokens among each other until they get all four tokens.
  * Question 21: This is the final question. Here, the players do one final scan to finish the game.
+
+## Navigation
+ * Previous page: [Setting up the software](setting-up.md)
+ * Next page: [Tips for making good questions](question-tips.md)
