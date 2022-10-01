@@ -9,7 +9,7 @@ Now, switch to the questions tab. There, you can set up all the questions for yo
 
 The first box on the page is where you can setup the survey for the players. A survey is an opportunity for you to collect some information from the players that can be converted into a game question. Each survey question has an ID, and you can reference the survey question in your game question below. For example, if your survey question is 'Do you like the color blue?', you can then set a game question like, 'Find someone who is pleased by the color of the sky or the ocean'. Think of 5-6 survey questions and clues pointing to them. For each survey question, add a paragraph like this in the Survey Questions box:
 
-```json
+```
 survey_questions: {
   question_id: <some_number>
   question_text: "<question text>"
@@ -28,7 +28,7 @@ Now start composing game questions with interesting or challenging questions abo
 
 For each question, you have to add a paragraph like this to the game questions box. Do not omit the curly braces and double quotes, they are important:
 
-```json
+```
 game_questions: {
   question_id: <some number>
   type: USERNAME_LIST / SURVEY_ANS / ANY_PERSON
