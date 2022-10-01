@@ -12,3 +12,6 @@
  - [ ] Begin the game.
  - [ ] Quickly check the All Users page and make sure that there is at least one positive answer for each of your survey questions. If there isn't, replace the corresponding game question with a backup question.
  - [ ] Monitor the progress on the All Users page.
+
+## Navigation
+* Previous page: [Tips for making good questions](question-tips.md)

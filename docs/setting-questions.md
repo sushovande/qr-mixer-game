@@ -9,7 +9,7 @@ Now, switch to the questions tab. There, you can set up all the questions for yo
 
 The first box on the page is where you can setup the survey for the players. A survey is an opportunity for you to collect some information from the players that can be converted into a game question. Each survey question has an ID, and you can reference the survey question in your game question below. For example, if your survey question is 'Do you like the color blue?', you can then set a game question like, 'Find someone who is pleased by the color of the sky or the ocean'. Think of 5-6 survey questions and clues pointing to them. For each survey question, add a paragraph like this in the Survey Questions box:
 
-```json
+```
 survey_questions: {
   question_id: <some_number>
   question_text: "<question text>"
@@ -28,7 +28,7 @@ Now start composing game questions with interesting or challenging questions abo
 
 For each question, you have to add a paragraph like this to the game questions box. Do not omit the curly braces and double quotes, they are important:
 
-```json
+```
 game_questions: {
   question_id: <some number>
   type: USERNAME_LIST / SURVEY_ANS / ANY_PERSON
@@ -63,3 +63,7 @@ Note: in the current version of the game, the following questions have special p
  * Question 19: This is the last "regular" question. Answering this correctly guarantees that the player will receive the second of four tokens, in case they didn't get one already
  * Question 20: In this question, we expect the players to mingle among themselves, and share the tokens among each other until they get all four tokens.
  * Question 21: This is the final question. Here, the players do one final scan to finish the game.
+
+## Navigation
+ * Previous page: [Setting up the software](setting-up.md)
+ * Next page: [Tips for making good questions](question-tips.md)

@@ -31,3 +31,5 @@ If you use this same server for other websites also, then
 
 Note that this site has no authentication. There are no passwords whatsoever, so make sure you're not expecting any security or authentication here, for any of the data.
 
+## Navigation
+ * Next page: [Setting up your questions](setting-questions.md)
