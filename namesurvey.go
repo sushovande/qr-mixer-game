@@ -20,9 +20,10 @@ import (
 	"log"
 	"net/http"
 	"net/url"
-	"qr-mixer-game/common"
-	"qr-mixer-game/qrpb"
 	"time"
+
+	"github.com/sushovande/qr-mixer-game/common"
+	"github.com/sushovande/qr-mixer-game/qrpb"
 
 	"github.com/google/uuid"
 	proto "google.golang.org/protobuf/proto"

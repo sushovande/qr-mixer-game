@@ -17,7 +17,8 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"qr-mixer-game/qrpb"
+
+	"github.com/sushovande/qr-mixer-game/qrpb"
 
 	proto "google.golang.org/protobuf/proto"
 )

@@ -25,9 +25,10 @@ import (
 	"math/rand"
 	"net/http"
 	"path"
-	"qr-mixer-game/common"
-	"qr-mixer-game/qrpb"
 	"time"
+
+	"github.com/sushovande/qr-mixer-game/common"
+	"github.com/sushovande/qr-mixer-game/qrpb"
 
 	proto "google.golang.org/protobuf/proto"
 )

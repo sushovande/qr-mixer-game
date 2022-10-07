@@ -17,8 +17,9 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"qr-mixer-game/common"
 	"strings"
+
+	"github.com/sushovande/qr-mixer-game/common"
 
 	qrcode "github.com/skip2/go-qrcode"
 )

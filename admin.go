@@ -18,10 +18,11 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"qr-mixer-game/common"
-	"qr-mixer-game/qrpb"
 	"sort"
 	"time"
+
+	"github.com/sushovande/qr-mixer-game/common"
+	"github.com/sushovande/qr-mixer-game/qrpb"
 
 	"google.golang.org/protobuf/encoding/protojson"
 	"google.golang.org/protobuf/encoding/prototext"

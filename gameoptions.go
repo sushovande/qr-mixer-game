@@ -18,8 +18,9 @@ import (
 	"database/sql"
 	_ "embed"
 	"log"
-	"qr-mixer-game/qrpb"
 	"time"
+
+	"github.com/sushovande/qr-mixer-game/qrpb"
 
 	"google.golang.org/protobuf/encoding/prototext"
 	"google.golang.org/protobuf/proto"
