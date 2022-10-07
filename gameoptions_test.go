@@ -15,9 +15,10 @@
 package main
 
 import (
-	"qr-mixer-game/qrpb"
 	"testing"
 	"time"
+
+	"github.com/sushovande/qr-mixer-game/qrpb"
 
 	"google.golang.org/protobuf/proto"
 )

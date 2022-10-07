@@ -1,4 +1,4 @@
-module qr-mixer-game
+module github.com/sushovande/qr-mixer-game
 
 go 1.18
 

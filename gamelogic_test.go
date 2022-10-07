@@ -16,8 +16,9 @@ package main
 
 import (
 	"fmt"
-	"qr-mixer-game/qrpb"
 	"testing"
+
+	"github.com/sushovande/qr-mixer-game/qrpb"
 
 	"google.golang.org/protobuf/encoding/prototext"
 	"google.golang.org/protobuf/proto"

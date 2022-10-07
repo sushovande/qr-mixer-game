@@ -18,10 +18,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"qr-mixer-game/qrpb"
 	"strings"
 	"testing"
 	"time"
+
+	"github.com/sushovande/qr-mixer-game/qrpb"
 
 	"google.golang.org/protobuf/encoding/prototext"
 	"google.golang.org/protobuf/proto"

@@ -18,7 +18,8 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
-	"qr-mixer-game/qrpb"
+
+	"github.com/sushovande/qr-mixer-game/qrpb"
 
 	"google.golang.org/protobuf/proto"
 )
