@@ -1,0 +1,17 @@
+run = "go build && ./qr-mixer-game --port=80"
+hidden = ["qr-mixer-game"]
+
+[env]
+CGO_ENABLED="1"
+
+[languages.go]
+pattern = "**/*.go"
+
+[languages.go.languageServer]
+start = "gopls"
+
+[nix]
+channel = "stable-21_11"
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix"]
