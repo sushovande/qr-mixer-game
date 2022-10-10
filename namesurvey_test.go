@@ -118,7 +118,7 @@ func TestConfirmNameWrongQr(t *testing.T) {
 	defer env.db.Close()
 	setupGlobals(env.cgo)
 
-	f := callController("GET", "/confirmname?qr=https%3A%2F%2Fqr.sd3.in%2F%23badbadbad", "", nil, env.confirmName)
+	f := callController("GET", "/confirmname?qr=https%3A%2F%2Fexample.com%2F%23badbadbad", "", nil, env.confirmName)
 	if f.statuscode != 500 {
 		t.Errorf("expected server error http code. Got %v", f.statuscode)
 	}

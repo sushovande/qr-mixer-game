@@ -9,21 +9,13 @@ QR Mixer Game has to be hosted on your own website. The easiest way to do this i
 3. Clone this repo
 4. Run `go build`
     - This should automatically fetch all go dependencies, including sqlite, and compile the code
-    - Optionally, you can also run go test ./... to check if everything is working fine.
-5. Download jsQR, which this project requires in order to scan QR codes in the browser.
-    - `curl --output ./static/jsQR.js https://raw.githubusercontent.com/cozmo/jsQR/master/dist/jsQR.js`
-    - If you're on Windows, or are unwilling to run the curl command above, just copy-paste the contents of 
-    [jsQR.js from github](https://github.com/cozmo/jsQR/blob/master/dist/jsQR.js) into a file called jsQR.js in the static directory.
-6. Run `qr-mixer-game –port=80`
-7. Verify that the site is working by visiting http://localhost.
-8. This game must be served using https, because of its use of the camera API. An easy way to do that is to 
+    - Optionally, you can also run `go test ./...` to check if everything is working fine.
+5. Run `qr-mixer-game –port=80`
+6. Verify that the site is working by visiting http://localhost.
+7. This game must be served using https, because of its use of the camera API. An easy way to do that is to 
   [set up cloudflare for your site](https://developers.cloudflare.com/fundamentals/get-started/setup/add-site/) 
   and [force HTTPS](https://developers.cloudflare.com/ssl/edge-certificates/encrypt-visitor-traffic/). 
   Alternatively, you can use [Let's Encrypt](https://letsencrypt.org/getting-started/), or any other method to set up SSL.
-9. Now, edit the file `static/game.js` and change the value `https://qr.sd3.in/` with the URL of where
-    you're actually hosting the game. Similarly, edit the file `templates/adminmanageusers.html` and
-    change the SITE_URL_PREFIX variable in the same way.
-10. Compile (`go build`) and reload the server.
 
 For reliability, you should [set up this game as a service](https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6).
 If you use this same server for other websites also, then

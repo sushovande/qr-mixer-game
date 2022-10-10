@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+let SITE_URL_PREFIX = "https://" + window.location.hostname + "/";
+
 function tabchange() {
     if (document.getElementById("tab-1").checked) {
         stopCamera();
@@ -212,7 +214,7 @@ function tick() {
             outputMessage.hidden = true;
             outputData.parentElement.hidden = false;
             outputData.innerText = code.data;
-            if (code.data.startsWith("https://qr.sd3.in/")) {
+            if (code.data.startsWith(SITE_URL_PREFIX)) {
                 scannedValidCode = code.data;
                 stopCamera();
                 cluescansim_click();
