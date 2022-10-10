@@ -1,4 +1,4 @@
-name: Go package
+name: Run all tests on push
 
 on: [push]
 
@@ -6,7 +6,8 @@ env:
   CGO_ENABLED: 1
 
 jobs:
-  build:
+  test:
+    name: "Build & Test"
 
     runs-on: ubuntu-latest
     steps:
