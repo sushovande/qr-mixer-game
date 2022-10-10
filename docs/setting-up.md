@@ -1,6 +1,17 @@
 # Setting up the software
 
-QR Mixer Game has to be hosted on your own website. The easiest way to do this is to host it on some cloud provider like Google Cloud or Amazon AWS. Once you're logged in to your server, do the following:
+## Easy option
+
+I have configured this code so it can easily run on Replit.
+Just click the button below, and follow the instructions.
+Remember to follow the rest of the Organizer Handbook afterwards. \
+[![Run on Repl.it](https://replit.com/badge/github/sushovande/qr-mixer-game)](https://replit.com/new/github/sushovande/qr-mixer-game)
+
+
+
+## Option 2: Hosting on your own server
+
+QR Mixer Game can be hosted on your own website. The easiest way to do this is to host it on some cloud provider like Google Cloud or Amazon AWS. Once you're logged in to your server, do the following:
 
 1. [Install Go](https://go.dev/doc/install)
 2. Prepare to install SQLite. The go version of the sqlite driver is a CGO enabled package, so it needs the following steps:
