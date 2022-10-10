@@ -9,7 +9,10 @@ QR Mixer Game also has special question types that require collaboration among t
 ![Gameplay illustration](https://raw.githubusercontent.com/sushovande/qr-mixer-game/main/docs/gameplay-illustration.jpg)
 
 
-Setting up the game is easy, see [the organizer playbook](docs/organizer-handbook.md) for more information.
+Setting up the game is easy, see [the organizer playbook](docs/organizer-handbook.md) for more information. An easy option is to run
+this on Replit:
+
+[![Run on Repl.it](https://replit.com/badge/github/sushovande/qr-mixer-game)](https://replit.com/new/github/sushovande/qr-mixer-game)
 
 ## Contributing
 
