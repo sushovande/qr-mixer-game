@@ -16,10 +16,6 @@ QR Mixer Game has to be hosted on your own website. The easiest way to do this i
   [set up cloudflare for your site](https://developers.cloudflare.com/fundamentals/get-started/setup/add-site/) 
   and [force HTTPS](https://developers.cloudflare.com/ssl/edge-certificates/encrypt-visitor-traffic/). 
   Alternatively, you can use [Let's Encrypt](https://letsencrypt.org/getting-started/), or any other method to set up SSL.
-8. Now, edit the file `static/game.js` and change the value `https://qr.sd3.in/` with the URL of where
-    you're actually hosting the game. Similarly, edit the file `templates/adminmanageusers.html` and
-    change the SITE_URL_PREFIX variable in the same way.
-9. Compile (`go build`) and reload the server.
 
 For reliability, you should [set up this game as a service](https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6).
 If you use this same server for other websites also, then

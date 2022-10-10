@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+let SITE_URL_PREFIX = "https://" + window.location.hostname + "/";
+
 function userChanged() {
   console.log("change processing");
 
