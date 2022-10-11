@@ -1,6 +1,6 @@
 run = "go build && ./qr-mixer-game --port=80"
 hidden = ["qr-mixer-game"]
-entrypoint = "docs/replit.md"
+entrypoint = "./docs/replit.md"
 
 [env]
 CGO_ENABLED="1"
